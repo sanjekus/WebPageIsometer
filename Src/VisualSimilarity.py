@@ -8,13 +8,15 @@ class VisualSimilarity:
 		return
 	
 	
-	def takeScreenshot(self,urlOfSite,targetFile):
-		s = Screenshot()
+	def takeScreenshot(self,urlOfSite,targetFile,s):
+		
 		pathOfSavedScreenshotFile = join(Constants.SCREENSHOT_PATH,targetFile)
-		s.capture(urlOfSite,pathOfSavedScreenshotFile)
+		if not os.path.exists(pathOfSavedScreenshotFile):
+			s.capture(urlOfSite,pathOfSavedScreenshotFile)
 	
 	
 	def prepareScreenshots(self):
+		s = Screenshot()
 		path = Constants.TRAINING_SET_PATH
 		listOfFilesHavingURL=  os.listdir(path)
 		for entry in listOfFilesHavingURL:
@@ -26,7 +28,7 @@ class VisualSimilarity:
 					if len(tokens) >= 4:
 						urlOfSite = tokens[2]
 						targetFilename = tokens[3]
-						self.takeScreenshot(urlOfSite, targetFilename)
+						self.takeScreenshot(urlOfSite, targetFilename,s)
 						
 						
 					
