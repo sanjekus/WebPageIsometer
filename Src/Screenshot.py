@@ -35,6 +35,3 @@ class Screenshot(QWebView):
     def _loadFinished(self, result):
         self._loaded = True
 
-s = Screenshot()
-s.capture('http://www.google.com', 'website.png')
-s.capture('http://sitescraper.net/blog', 'blog.png')
