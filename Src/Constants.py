@@ -5,6 +5,7 @@ class Constants:
 	
 	
 	
+	
 	'''Structural Similarity'''
 	listOfTags=["TABLE","DEFINITION_LIST","ORDERED_LIST","UNORDERED_LIST","BREAKS"]
 	
@@ -23,4 +24,3 @@ class Constants:
 	
 	def __init__(self):
 		return
-
